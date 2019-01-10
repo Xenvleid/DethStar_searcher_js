@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Activity 3</title>
+</head>
+<body>
+<!-- 	
+	1. Create an HTML form with a text input and a button. 
+	2. Create an empty array to store the data from the input every time the button is clicked. 
+	3. Add a second button to open a prompt() where users pass a text to be searched in the array, 
+	4. if text is found return the text position using alert(). 
+	5. Add another button that alert() the first three elements on the array. 
+	6. Last, add a new button that alert() the whole array. -->
+
+	<input id="inp" type="text"/><br/><br/>
+	<button onclick="btn1Click();">Insert</button><br/>
+	<button onclick="btn2Click();">Search</button><br/>
+    <button onclick="btn3Click();">3 elements</button><br/>
+    <button onclick="btn4Click();">Sort</button><br/>
+    <button onclick="btn5Click();">UnderSort</button><br/>
+
+	<script type="text/javascript">
+		var data = ["4", "56", "_98", "fire", "float", "_hill", "new", "tie"];
+
+		// add data to the array
+		function btn1Click() {
+			var dt = document.getElementById('inp').value;
+			data.push(dt);
+			console.log(data);
+		}
+
+		// search in the array
+		function btn2Click() {
+			var sr = prompt();
+			var elementFound = data.includes(sr);
+
+			if(elementFound) 
+				alert("The position is: " + data.indexOf(sr));
+		}
+
+		// get three elements of the array
+		function btn3Click() {
+			var elem3 = data.slice(0,3);
+			alert("The position is: " + elem3);
+		}
+
+        function btn4Click() {
+            data.sort(function(a, b) {
+		if(a < b) return 1;
+		else if(a > b) return -1;
+		else return 0;
+	});
+
+        function btn5Click() {
+        
+
+        }
+            console.log(data);
+    	}
+	</script>
+</body>
+</html>
